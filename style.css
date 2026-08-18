@@ -1,0 +1,1816 @@
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --blue: #1f4fa3;
+    --red: #d93636;
+    --yellow: #f2c94c;
+
+    --text-dark: #1f2937;
+    --text-gray: #6b7280;
+
+    --white: #ffffff;
+
+}
+
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    color: var(--text-dark);
+
+}
+
+
+/* =========================================================
+   FONDO DEL LOGIN
+========================================================= */
+
+.login-page {
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*
+        Degradado extremadamente sutil.
+        El blanco sigue siendo el color dominante.
+    */
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(31, 79, 163, 0.08),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(217, 54, 54, 0.07),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 90%,
+            rgba(242, 201, 76, 0.08),
+            transparent 35%
+        ),
+
+        #ffffff;
+
+}
+
+
+/* =========================================================
+   TARJETA PRINCIPAL
+========================================================= */
+
+.login-card {
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 28px;
+
+    padding: 45px 40px;
+
+    /*
+        Sombra suave para dar sensación
+        de profundidad.
+    */
+
+    box-shadow:
+
+        0 20px 50px rgba(31, 41, 55, 0.08),
+
+        0 5px 15px rgba(31, 41, 55, 0.04);
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 28px;
+
+}
+
+
+.logo {
+
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+.login-header {
+
+    text-align: center;
+
+    margin-bottom: 32px;
+
+}
+
+
+.color-line {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.color-line span {
+
+    width: 22px;
+    height: 4px;
+
+    border-radius: 20px;
+
+}
+
+
+.color-line .blue {
+    background: var(--blue);
+}
+
+.color-line .red {
+    background: var(--red);
+}
+
+.color-line .yellow {
+    background: var(--yellow);
+}
+
+
+.login-header h1 {
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.login-header p {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: var(--text-gray);
+
+    margin: 0 auto;
+
+    max-width: 320px;
+
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-group-custom {
+
+    margin-bottom: 20px;
+
+}
+
+
+.input-group-custom label {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+}
+
+
+.input-group-custom input {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    border-radius: 13px;
+
+    border: 1px solid #e5e7eb;
+
+    background: #fafafa;
+
+    font-size: 14px;
+
+    color: var(--text-dark);
+
+    outline: none;
+
+    transition: all 0.25s ease;
+
+}
+
+
+.input-group-custom input::placeholder {
+
+    color: #9ca3af;
+
+}
+
+
+.input-group-custom input:hover {
+
+    border-color: #d1d5db;
+
+}
+
+
+.input-group-custom input:focus {
+
+    background: #ffffff;
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 4px rgba(31, 79, 163, 0.08);
+
+}
+
+
+/* =========================================================
+   MENSAJE DE ERROR
+========================================================= */
+
+.error-message {
+
+    min-height: 20px;
+
+    margin-bottom: 8px;
+
+    color: var(--red);
+
+    font-size: 13px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   BOTÓN
+========================================================= */
+
+.btn-login {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: var(--blue);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.btn-login:hover {
+
+    background: #19448f;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(31, 79, 163, 0.20);
+
+}
+
+
+.btn-login:active {
+
+    transform: translateY(0);
+
+}
+
+
+.arrow {
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    transition: transform 0.2s ease;
+
+}
+
+
+.btn-login:hover .arrow {
+
+    transform: translateX(4px);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.login-footer {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 30px;
+
+}
+
+
+.footer-dot {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+}
+
+
+.footer-dot.blue {
+    background: var(--blue);
+}
+
+.footer-dot.red {
+    background: var(--red);
+}
+
+.footer-dot.yellow {
+    background: var(--yellow);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .login-card {
+
+        padding: 35px 25px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .login-header h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    .login-header p {
+
+        font-size: 13px;
+
+    }
+
+
+    .logo {
+
+    width: 75px;
+    height: 75px;
+
+}
+
+}
+
+
+/* =========================================================
+   PANTALLAS MUY PEQUEÑAS
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .login-card {
+
+        padding: 30px 20px;
+
+    }
+
+
+    .login-header h1 {
+
+        font-size: 21px;
+
+    }
+
+}
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard-page {
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(31, 79, 163, 0.08),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(217, 54, 54, 0.07),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 90%,
+            rgba(242, 201, 76, 0.08),
+            transparent 35%
+        ),
+
+        #ffffff;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dashboard-header {
+
+    background: rgba(255, 255, 255, 0.90);
+
+    border-bottom: 1px solid rgba(31, 41, 55, 0.06);
+
+    backdrop-filter: blur(12px);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+}
+
+
+.header-content {
+
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.dashboard-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+}
+
+
+.logo-small {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f5f8ff;
+
+    color: var(--blue);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+.logo-small img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+.logout-button {
+
+    border: 1px solid #e5e7eb;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 9px 15px;
+
+    color: var(--text-dark);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.logout-button:hover {
+
+    border-color: var(--red);
+
+    color: var(--red);
+
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.dashboard-content {
+
+    padding: 55px 0 70px;
+
+}
+
+
+.welcome-section {
+
+    margin-bottom: 45px;
+
+}
+
+
+.welcome-accent {
+
+    display: flex;
+
+    gap: 5px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.welcome-accent span {
+
+    width: 20px;
+
+    height: 4px;
+
+    border-radius: 20px;
+
+}
+
+
+.welcome-accent .blue {
+    background: var(--blue);
+}
+
+.welcome-accent .red {
+    background: var(--red);
+}
+
+.welcome-accent .yellow {
+    background: var(--yellow);
+}
+
+
+.welcome-section h1 {
+
+    font-size: clamp(28px, 4vw, 38px);
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+    letter-spacing: -0.7px;
+
+}
+
+
+.welcome-section h1 span {
+
+    color: var(--blue);
+
+}
+
+
+.welcome-section p {
+
+    color: var(--text-gray);
+
+    margin: 0;
+
+}
+
+
+/* =========================================================
+   TÍTULOS DE SECCIÓN
+========================================================= */
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.section-icon {
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 13px;
+
+    background: #f5f8ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 19px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin: 0 0 3px;
+
+}
+
+
+.section-title p {
+
+    margin: 0;
+
+    font-size: 13px;
+
+    color: var(--text-gray);
+
+}
+
+
+/* =========================================================
+   INFORMACIÓN DEL USUARIO
+========================================================= */
+
+.user-information {
+
+    margin-bottom: 50px;
+
+}
+
+
+.user-card {
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid rgba(31, 41, 55, 0.07);
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    box-shadow:
+
+        0 10px 30px rgba(31, 41, 55, 0.05);
+
+}
+
+
+.user-data {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.data-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.data-label {
+
+    font-size: 12px;
+
+    color: var(--text-gray);
+
+    font-weight: 500;
+
+}
+
+
+.data-value {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: var(--text-dark);
+
+}
+
+
+/* =========================================================
+   CERTIFICADOS
+========================================================= */
+
+.certificates-section {
+
+    margin-bottom: 40px;
+
+}
+
+
+/* Tarjeta individual */
+
+.certificate-card {
+
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid rgba(31, 41, 55, 0.07);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow:
+
+        0 10px 30px rgba(31, 41, 55, 0.05);
+
+    transition:
+
+        transform 0.25s ease,
+
+        box-shadow 0.25s ease;
+
+}
+
+
+.certificate-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+
+        0 15px 35px rgba(31, 41, 55, 0.09);
+
+}
+
+
+/* Parte superior */
+
+.certificate-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.certificate-icon {
+
+    width: 46px;
+
+    height: 46px;
+
+    border-radius: 13px;
+
+    background: #fff9e5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+}
+
+
+.certificate-status {
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: #f0f7ff;
+
+    color: var(--blue);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+/* Nombre de capacitación */
+
+.certificate-title {
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* Datos */
+
+.certificate-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.certificate-info-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    font-size: 13px;
+
+}
+
+
+.certificate-info-item span:first-child {
+
+    color: var(--text-gray);
+
+}
+
+
+.certificate-info-item span:last-child {
+
+    font-weight: 600;
+
+    text-align: right;
+
+}
+
+
+/* Botón */
+
+.certificate-button {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 11px;
+
+    padding: 11px;
+
+    background: var(--blue);
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.certificate-button:hover {
+
+    background: #19448f;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* =========================================================
+   SIN CERTIFICADOS
+========================================================= */
+
+.no-certificates {
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-radius: 20px;
+
+    border: 1px dashed #dfe3e8;
+
+}
+
+
+.empty-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.no-certificates h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.no-certificates p {
+
+    color: var(--text-gray);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.dashboard-footer {
+
+    padding: 25px 0;
+
+    border-top: 1px solid rgba(31, 41, 55, 0.06);
+
+}
+
+
+.footer-content {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+}
+
+
+.footer-content p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    color: var(--text-gray);
+
+}
+
+
+.footer-colors {
+
+    display: flex;
+
+    gap: 4px;
+
+}
+
+
+.footer-colors span {
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+}
+
+
+.footer-colors .blue {
+    background: var(--blue);
+}
+
+.footer-colors .red {
+    background: var(--red);
+}
+
+.footer-colors .yellow {
+    background: var(--yellow);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .dashboard-content {
+
+        padding: 40px 0 55px;
+
+    }
+
+
+    .user-data {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .user-card {
+
+        padding: 22px;
+
+    }
+
+
+    .welcome-section {
+
+        margin-bottom: 35px;
+
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .dashboard-logo span {
+
+        display: none;
+
+    }
+
+
+    .header-content {
+
+        min-height: 68px;
+
+    }
+
+
+    .dashboard-content {
+
+        padding: 30px 0 45px;
+
+    }
+
+
+    .welcome-section h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .section-title h2 {
+
+        font-size: 18px;
+
+    }
+
+
+    .certificate-card {
+
+        padding: 21px;
+
+    }
+
+
+    .dashboard-footer {
+
+        text-align: center;
+
+    }
+
+}
+/* =========================================================
+   TARJETA CON QR
+========================================================= */
+
+.certificate-card {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+.certificate-main {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+/* =========================================================
+   SECCIÓN QR
+========================================================= */
+
+.certificate-qr-section {
+
+    width: 190px;
+
+    min-width: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding-left: 25px;
+
+    border-left: 1px solid #eeeeee;
+
+}
+
+
+.qr-title {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: var(--text-dark);
+
+    margin-bottom: 12px;
+
+}
+
+
+.qr-container {
+
+    width: 150px;
+
+    height: 150px;
+
+    background: white;
+
+    padding: 8px;
+
+    border-radius: 12px;
+
+    border: 1px solid #eeeeee;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.qr-container img {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+.qr-container canvas {
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+}
+
+
+.qr-description {
+
+    text-align: center;
+
+    font-size: 11px;
+
+    color: var(--text-gray);
+
+    margin: 10px 0 12px;
+
+    line-height: 1.4;
+
+}
+
+
+.qr-download-button {
+
+    border: 1px solid var(--blue);
+
+    background: white;
+
+    color: var(--blue);
+
+    border-radius: 9px;
+
+    padding: 7px 12px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.qr-download-button:hover {
+
+    background: var(--blue);
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE QR
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .certificate-card {
+
+        flex-direction: column;
+
+    }
+
+
+    .certificate-qr-section {
+
+        width: 100%;
+
+        min-width: 0;
+
+        padding-left: 0;
+
+        padding-top: 25px;
+
+        border-left: none;
+
+        border-top: 1px solid #eeeeee;
+
+    }
+
+}
+
+/* ==========================================================
+   🔎 BUSCADOR DE CONSTANCIAS
+========================================================== */
+
+.certificate-search {
+
+    width: 100%;
+
+    margin-top: 22px;
+    margin-bottom: 20px;
+
+}
+
+
+/* Contenedor del input */
+
+.search-input-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+}
+
+
+/* Icono de búsqueda */
+
+.search-icon {
+
+    position: absolute;
+
+    left: 17px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 15px;
+
+    color: #9ca3af;
+
+    pointer-events: none;
+
+}
+
+
+/* Input */
+
+.search-input {
+
+    width: 100%;
+
+    height: 50px;
+
+    padding:
+        0 45px
+        0 48px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e8e8e8;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.94
+    );
+
+    color: var(--text-dark);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+/* Placeholder */
+
+.search-input::placeholder {
+
+    color: #a1a1aa;
+
+}
+
+
+/* Hover */
+
+.search-input:hover {
+
+    border-color: #d5d5d5;
+
+}
+
+
+/* Cuando haces click */
+
+.search-input:focus {
+
+    background: #ffffff;
+
+    border-color: rgba(
+        25,
+        118,
+        210,
+        0.35
+    );
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            25,
+            118,
+            210,
+            0.06
+        );
+
+}
+
+
+/* ==========================================================
+   BOTÓN LIMPIAR
+========================================================== */
+
+.clear-search {
+
+    position: absolute;
+
+    right: 13px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 27px;
+
+    height: 27px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    color: #9ca3af;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+/* Cuando JS indique que hay texto */
+
+.clear-search.visible {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+
+/* Hover */
+
+.clear-search:hover {
+
+    background: rgba(
+        229,
+        57,
+        53,
+        0.09
+    );
+
+    color: var(--red);
+
+    transform:
+        translateY(-50%)
+        scale(1.05);
+
+}
+
+
+/* ==========================================================
+   MENSAJE DE BÚSQUEDA
+========================================================== */
+
+.search-message {
+
+    text-align: center;
+
+    padding:
+        20px
+        15px;
+
+    margin-bottom: 18px;
+
+    border-radius: 14px;
+
+    background: rgba(
+        25,
+        118,
+        210,
+        0.035
+    );
+
+    border: 1px dashed rgba(
+        25,
+        118,
+        210,
+        0.15
+    );
+
+    color: var(--text-gray);
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE - CELULAR
+========================================================== */
+
+@media (max-width: 576px) {
+
+    .certificate-search {
+
+        margin-top: 18px;
+
+        margin-bottom: 17px;
+
+    }
+
+
+    .search-input {
+
+        height: 48px;
+
+        font-size: 12px;
+
+        border-radius: 13px;
+
+    }
+
+
+    .search-icon {
+
+        left: 15px;
+
+        font-size: 14px;
+
+    }
+
+
+    .search-input {
+
+        padding-left: 43px;
+
+        padding-right: 42px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   CELULARES PEQUEÑOS
+========================================================== */
+
+@media (max-width: 360px) {
+
+    .search-input::placeholder {
+
+        font-size: 11px;
+
+    }
+
+}
+/* ============================================================
+   PAGINACIÓN DE CONSTANCIAS
+============================================================ */
+
+.certificates-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+
+.pagination-button {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #1f2937;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.pagination-button:hover:not(:disabled) {
+    background: #f3f4f6;
+    transform: translateY(-1px);
+}
+
+
+.pagination-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+.pagination-info {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+.pagination-info strong {
+    color: #111827;
+    font-weight: 600;
+}

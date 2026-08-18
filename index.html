@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mis Constancias</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <main class="dashboard-page">
+
+
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+
+        <header class="dashboard-header">
+
+            <div class="container">
+
+                <div class="header-content">
+
+                    <!-- Logo -->
+
+                    <div class="dashboard-logo">
+
+                        <div class="logo-small">
+                            <img 
+                                src="images/logo.png" 
+                                alt="Logo"
+                            >
+                        </div>
+
+                        <span>
+                            Consulta de Constancias
+                        </span>
+
+                    </div>
+
+
+                    <!-- Botón salir -->
+
+                    <button
+                        id="logoutButton"
+                        class="logout-button"
+                    >
+
+                        <span>
+                            Salir
+                        </span>
+
+                        <span>
+                            ↗
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             CONTENIDO PRINCIPAL
+        ====================================================== -->
+
+        <section class="dashboard-content">
+
+            <div class="container">
+
+
+                <!-- Bienvenida -->
+
+                <div class="welcome-section">
+
+                    <div>
+
+                        <div class="welcome-accent">
+
+                            <span class="blue"></span>
+                            <span class="red"></span>
+                            <span class="yellow"></span>
+
+                        </div>
+
+
+                        <h1>
+                            Hola, <span id="userName">Usuario</span>
+                        </h1>
+
+
+                        <p>
+                            Aquí puedes consultar tus datos y
+                            constancias de capacitación.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     INFORMACIÓN DEL USUARIO
+                ================================================== -->
+
+                <section class="user-information">
+
+                    <div class="section-title">
+
+                        <div class="section-icon">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Información personal
+                            </h2>
+
+                            <p>
+                                Datos registrados en el sistema
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="user-card">
+
+                        <div class="user-data">
+
+                            <div class="data-item">
+
+                                <span class="data-label">
+                                    Nombre completo
+                                </span>
+
+                                <span
+                                    id="userFullName"
+                                    class="data-value"
+                                >
+                                    —
+                                </span>
+
+                            </div>
+
+
+                            <div class="data-item">
+
+                                <span class="data-label">
+                                    DNI
+                                </span>
+
+                                <span
+                                    id="userDni"
+                                    class="data-value"
+                                >
+                                    —
+                                </span>
+
+                            </div>
+
+
+                            <div class="data-item">
+
+                                <span class="data-label">
+                                    Cursos inscritos
+                                </span>
+
+                                <span
+                                    id="userCourses"
+                                    class="data-value"
+                                >
+                                    —
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     CONSTANCIAS
+                ================================================== -->
+
+                <section class="certificates-section">
+
+                    <div class="section-title">
+
+                        <div class="section-icon certificate-icon">
+                            🏆
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Mis constancias
+                            </h2>
+
+                            <p>
+                                Constancias y certificados registrados
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         🔎 BUSCADOR DE CONSTANCIAS
+                    ================================================== -->
+
+                    <div class="certificate-search">
+
+                        <div class="search-input-wrapper">
+
+                            <span class="search-icon">
+                                🔍
+                            </span>
+
+                            <input
+                                type="text"
+                                id="certificateSearch"
+                                class="search-input"
+                                placeholder="Buscar por capacitación, código, fecha..."
+                                autocomplete="off"
+                            >
+
+                            <button
+                                type="button"
+                                id="clearSearch"
+                                class="clear-search"
+                                aria-label="Limpiar búsqueda"
+                            >
+                                ×
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Mensaje de búsqueda -->
+
+                    <div
+                        id="searchMessage"
+                        class="search-message d-none"
+                    >
+
+                        🔎 No encontramos constancias que coincidan
+                        con tu búsqueda.
+
+                    </div>
+
+
+                    <!-- =================================================
+                         CONTENEDOR DE CERTIFICADOS
+                    ================================================== -->
+
+                    <div
+                        id="certificatesContainer"
+                        class="row g-4"
+                    >
+
+                        <!--
+                            Los certificados se generarán
+                            automáticamente con JavaScript.
+                        -->
+
+                    </div>
+
+
+                    <!-- =================================================
+                         PAGINACIÓN
+                    ================================================== -->
+
+                    <div
+                        id="certificatesPagination"
+                        class="certificates-pagination"
+                    >
+
+                        <!--
+                            La paginación se generará
+                            automáticamente con JavaScript.
+                        -->
+
+                    </div>
+
+
+                    <!-- Mensaje cuando no existen certificados -->
+
+                    <div
+                        id="noCertificates"
+                        class="no-certificates d-none"
+                    >
+
+                        <div class="empty-icon">
+                            📄
+                        </div>
+
+                        <h3>
+                            No tienes constancias registradas
+                        </h3>
+
+                        <p>
+                            Actualmente no encontramos
+                            constancias asociadas a tu DNI.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <footer class="dashboard-footer">
+
+            <div class="container">
+
+                <div class="footer-content">
+
+                    <div class="footer-colors">
+
+                        <span class="blue"></span>
+                        <span class="red"></span>
+                        <span class="yellow"></span>
+
+                    </div>
+
+                    <p>
+                        Sistema de consulta de constancias
+                    </p>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+
+    </main>
+
+
+<!-- Bootstrap JS -->
+<script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<!-- Librería para generar QR -->
+<script 
+    src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js">
+</script>
+
+<!-- JavaScript propio -->
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Consulta de Constancias</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Bootstrap -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+    >
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <div class="container">
+
+            <div class="row justify-content-center align-items-center min-vh-100">
+
+                <div class="col-11 col-sm-9 col-md-7 col-lg-5 col-xl-4">
+
+                    <section class="login-card">
+
+                        <!-- Logo -->
+                        <div class="logo-container">
+                            <img 
+                                src="images/logo.png" 
+                                alt="Logo"
+                                class="logo"
+                            >
+                        </div>
+
+
+                        <!-- Encabezado -->
+                        <div class="login-header">
+
+                            <div class="color-line">
+                                <span class="blue"></span>
+                                <span class="red"></span>
+                                <span class="yellow"></span>
+                            </div>
+
+                            <h1>
+                                Consulta de Constancias
+                            </h1>
+
+                            <p>
+                                Ingresa tu código para consultar tus
+                                constancias y certificados.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Formulario -->
+                        <form id="loginForm">
+
+                            <div class="input-group-custom">
+
+                                    <label for="codigo">
+                                        DNI
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="codigo"
+                                        placeholder="Ingresa tu DNI"
+                                        maxlength="8"
+                                        aria-placeholder="12345678"
+                                        inputmode="numeric"
+                                        autocomplete="off"
+                                    >
+
+                                </div>
+
+
+                            <!-- Mensaje de error -->
+                            <p 
+                                id="loginError" 
+                                class="error-message">
+                            </p>
+
+
+                            <!-- Botón -->
+                            <button 
+                                type="submit" 
+                                class="btn-login">
+
+                                <span>
+                                    Ingresar
+                                </span>
+
+                                <span class="arrow">
+                                    →
+                                </span>
+
+                            </button>
+
+                        </form>
+
+
+                        <!-- Footer -->
+                        <div class="login-footer">
+
+                            <span class="footer-dot blue"></span>
+                            <span class="footer-dot red"></span>
+                            <span class="footer-dot yellow"></span>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Bootstrap JS -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JavaScript propio -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
